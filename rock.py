@@ -14,35 +14,41 @@ def get_input():
     print('oops')
   except :
     print("bye")
-  
-  
 
 
 user_choice = get_input() 
+
 
 def get_bot_choice():
   rand = random.randint(0, 2)
   computer_choice = mylist[rand]
   return computer_choice
 
-#value1 : bot 
-#value2 : user
 
 def get_res(value1, value2) -> str:
+
   if value1 == value2:
-    return "tie "
-
+    return "Tie"
+  
   elif value1 == "rock" and value2 == "scissors":
-    return "you and idiot u lose"
+    return "You win, the bot chose rock, and you chose scissors."
   
-  elif value1 == "rock" and value2 == "paper":
-    return "you won"
+  elif value1 == "scissors" and value2 == "rock":
+    return "You win, the bot chose rock, and you chose scissors."
+
+  elif value1 ==" paper" and value2 == "rock":
+    "You lose, the bot chose rock, and you chose paper."
   
+  elif value1 =="rock" and value2 == "paper":
+    "You lose, the bot chose rock, and you chose paper."
+
   elif value1 == "paper" and value2 == "scissors":
-    return "you won"
-  else : return
+    return "You lose, the bot chose paper, and you chose scissors."
+  
+  elif value1 == "scissors" and value2 == "paper":
+    return "You lose, the bot chose paper, and you chose scissors."
 
-print(get_bot_choice())  
-result = get_res(value2=user_choice, value1=get_bot_choice())
-print(result)
+  return "Invalid input or a tie occurred."
 
+print(get_bot_choice())
+print(get_res(value2=user_choice, value1=get_bot_choice()))
